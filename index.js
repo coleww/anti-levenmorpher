@@ -18,10 +18,10 @@ var morph = module.exports = function(start, target) {
     }
 
     // Find words that are one mutation away from the start word
-    // and sort them by their distance from the target word
+    // and sort them by their distance from the target word IN REVERSE!
     var candidates = (words[start] || [])
       .sort(function(a, b) {
-        return distance(a, target) - distance(b, target)
+        return distance(b, target) - distance(a, target)
       })
 
     if (!candidates.length)
