@@ -26,8 +26,8 @@ var morph = module.exports = function(start, target) {
 
     if (!candidates.length)
       return null
-
-    return step(candidates[0], target)
+  // just pick a candidate at random i guess, sure
+    return step(candidates[~~(Math.random() * candidates.length)], target)
   }
 
   return step(start, target)
